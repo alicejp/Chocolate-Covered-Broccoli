@@ -5,37 +5,45 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     //Debug use
-    public float xValue = 0f;
-
+    public Vector3 zValue;
 
     public float yBoostValue = 0.1f;
-    public float yReduceValue = 0.005f;
     
-    public float speed = 4f;
-    private float yValue = 0;
+    public float rotateValue = 4f;
 
+    private Rigidbody m_rigidbody;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        m_rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        xValue = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            yValue += yBoostValue;
-        }else
-        {
-            if (yValue > 0)
-                yValue -= yReduceValue;
-        }
-            
+        processBoost();
+        processRotation();
+    }
 
-        transform.Translate(xValue, yValue, 0);
+    void processBoost()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            m_rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * yBoostValue);
+        }
+    }
+
+    void processRotation()
+    {
+        zValue = Vector3.forward * Time.deltaTime * rotateValue;
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-zValue);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(zValue);
+        }
     }
 }
