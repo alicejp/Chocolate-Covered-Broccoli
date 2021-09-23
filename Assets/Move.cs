@@ -12,10 +12,12 @@ public class Move : MonoBehaviour
     public float rotateValue = 4f;
 
     private Rigidbody m_rigidbody;
+    private AudioSource m_audioSource;
 
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,12 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             m_rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * yBoostValue);
+            if (!m_audioSource.isPlaying)
+                m_audioSource.Play();
+        }
+        else
+        {
+            m_audioSource.Stop();
         }
     }
 
