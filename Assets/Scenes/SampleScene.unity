@@ -134,13 +134,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landing Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 51698397251412671, guid: 4524b7f6b970ad74b8202ff0cc4fc568, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 3776713920997728706, guid: 4524b7f6b970ad74b8202ff0cc4fc568, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3776713920997728706, guid: 4524b7f6b970ad74b8202ff0cc4fc568, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 3776713920997728706, guid: 4524b7f6b970ad74b8202ff0cc4fc568, type: 3}
       propertyPath: m_LocalPosition.y
@@ -394,6 +398,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &931571587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931571579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08314f8077ae3a94fa9853595b50aa00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3776713920997728706, guid: 4524b7f6b970ad74b8202ff0cc4fc568, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3776713920997728706, guid: 4524b7f6b970ad74b8202ff0cc4fc568, type: 3}
       propertyPath: m_LocalPosition.z
@@ -600,6 +616,10 @@ PrefabInstance:
     - target: {fileID: 6299054624677533199, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
       propertyPath: m_Name
       value: Broccoli
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299054624677533199, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
