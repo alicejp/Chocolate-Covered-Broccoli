@@ -7,16 +7,24 @@ public class CollisionHandler : MonoBehaviour
 {
     public float invokeDelayTime = 1f;
 
+    // In order to avoiding all the collision after crash or finish.
+    private bool isTransitioning = false;
+
     private void OnCollisionEnter(Collision other) {
+        if (isTransitioning)
+            return;
+        
         switch (other.gameObject.tag)
         {
             case "Start":
                 Debug.Log("Start");
                 break;
             case "Finish":
+                isTransitioning = true;
                 FinishHandler();
                 break;
             default:
+                isTransitioning = true;
                 CrashHandler();
                 break;
         }
