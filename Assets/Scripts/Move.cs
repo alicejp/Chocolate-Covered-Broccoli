@@ -6,10 +6,12 @@ public class Move : MonoBehaviour
 {
     //Debug use
     public Vector3 zValue;
-
     public float yBoostValue = 0.1f;
-    
     public float rotateValue = 4f;
+
+    public ParticleSystem boostParticle;
+    public ParticleSystem leftTrustParticle;
+    public ParticleSystem rightTrushParticle;
 
     private Rigidbody m_rigidbody;
     private AudioSource m_audioSource;
@@ -34,10 +36,14 @@ public class Move : MonoBehaviour
             m_rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * yBoostValue);
             if (!m_audioSource.isPlaying)
                 m_audioSource.Play();
+            
+            if(!boostParticle.isPlaying)
+                boostParticle.Play();
         }
         else
         {
             m_audioSource.Stop();
+            boostParticle.Stop();
         }
     }
 
@@ -48,10 +54,19 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(-zValue);
+            if(!rightTrushParticle.isPlaying)
+                rightTrushParticle.Play();
         }
         else if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(zValue);
+            if(!leftTrustParticle.isPlaying)
+                leftTrustParticle.Play();
+        }
+        else
+        {
+            rightTrushParticle.Stop();
+            leftTrustParticle.Stop();
         }
     }
 }

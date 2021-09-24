@@ -10,6 +10,9 @@ public class CollisionHandler : MonoBehaviour
     public AudioClip crashAudioClip;
     public AudioClip finsihAudioClip;
 
+    public ParticleSystem finishParticle;
+    public ParticleSystem crashParticle;
+
     // In order to avoiding all the collision after crash or finish.
     private bool isTransitioning = false;
     private AudioSource m_audioSource;
@@ -42,15 +45,19 @@ public class CollisionHandler : MonoBehaviour
     {
         m_audioSource.Stop();
         m_audioSource.PlayOneShot(crashAudioClip);
-
+        crashParticle.Play();
         GetComponent<Move>().enabled = false;
         Invoke("ReloadScene", invokeDelayTime);
     }
 
     private void FinishHandler()
     {
+        //sfx
         m_audioSource.Stop();
         m_audioSource.PlayOneShot(finsihAudioClip);
+
+        //vfx
+        finishParticle.Play();
 
         GetComponent<Move>().enabled = false;
         Invoke("LoadNextScene", invokeDelayTime);
