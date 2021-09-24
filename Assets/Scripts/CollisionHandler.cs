@@ -7,8 +7,16 @@ public class CollisionHandler : MonoBehaviour
 {
     public float invokeDelayTime = 1f;
 
+    public AudioClip crashAudioClip;
+    public AudioClip finsihAudioClip;
+
     // In order to avoiding all the collision after crash or finish.
     private bool isTransitioning = false;
+    private AudioSource m_audioSource;
+
+    void Start() {
+        m_audioSource = GetComponent<AudioSource>();   
+    }
 
     private void OnCollisionEnter(Collision other) {
         if (isTransitioning)
@@ -32,12 +40,18 @@ public class CollisionHandler : MonoBehaviour
 
     private void CrashHandler()
     {
+        m_audioSource.Stop();
+        m_audioSource.PlayOneShot(crashAudioClip);
+
         GetComponent<Move>().enabled = false;
         Invoke("ReloadScene", invokeDelayTime);
     }
 
     private void FinishHandler()
     {
+        m_audioSource.Stop();
+        m_audioSource.PlayOneShot(finsihAudioClip);
+
         GetComponent<Move>().enabled = false;
         Invoke("LoadNextScene", invokeDelayTime);
     }
