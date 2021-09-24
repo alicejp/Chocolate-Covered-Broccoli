@@ -461,6 +461,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15.66, y: 0, z: 0}
+--- !u!1 &1280382424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6299054624677533199, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
+  m_PrefabInstance: {fileID: 1645995534937757485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1280382425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280382424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1554555, z: 1}
+  m_Center: {x: 0, y: -0.07772807, z: 0}
 --- !u!1 &1330954388
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5286534844924017439, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5286534844924017439, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
       propertyPath: m_LocalPosition.z
@@ -612,7 +630,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Broccoli
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2545484278704830802, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b0c51557605aef64fbdaa1b4d0de2783, type: 3}
 --- !u!1001 &3225145690628800026
 PrefabInstance:
