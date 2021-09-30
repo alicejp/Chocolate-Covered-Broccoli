@@ -36,6 +36,7 @@ public class CollisionHandler : MonoBehaviour
         else if (Input.GetKey(KeyCode.C))
         {
             disableCollision = !disableCollision;
+            Debug.Log(disableCollision + "-disableCollision");
         }
     }
 

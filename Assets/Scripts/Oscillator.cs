@@ -8,6 +8,7 @@ public class Oscillator : MonoBehaviour
     public Vector3 movementVector;
     [Range(-1, 1)] public float movementFactor;
     public float periods = 2f;
+    public float timeDelay = 0.1f;
 
     const float TAU = Mathf.PI * 2;
     private Vector3 offest;
@@ -29,7 +30,7 @@ public class Oscillator : MonoBehaviour
         
         cycles = Time.time / periods;
 
-        movementFactor = Mathf.Sin(TAU * cycles);
+        movementFactor = Mathf.Sin(TAU * cycles + timeDelay);
         offest = movementFactor * movementVector * Time.deltaTime;
 
         transform.position += offest;
